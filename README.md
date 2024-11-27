@@ -6,8 +6,8 @@ Clone the Repository
 
                          git clone https://github.com/nnilayy/YouTube-ContinueOn.git
 
-Open Chrome and go to chrome://extensions/.
-Enable Developer mode in the top-right corner.
+Open Chrome and go to chrome://extensions/. <br/>
+Enable Developer mode in the top-right corner.<br/>
 Click Load unpacked and select the folder where you cloned this repository.
 
 ## Features
