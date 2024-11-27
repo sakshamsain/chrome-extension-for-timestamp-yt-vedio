@@ -3,7 +3,7 @@
 ## Installation
 Clone the Repository
 
-                         git clone https://github.com/nnilayy/YouTube-ContinueOn.git
+                         git clone https://github.com/sakshamsain/chrome-extension-for-timestamp-yt-vedio.git
 
 Open Chrome and go to chrome://extensions/. <br/>
 Enable Developer mode in the top-right corner.<br/>
