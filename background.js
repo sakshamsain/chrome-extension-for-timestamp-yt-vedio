@@ -1,6 +1,4 @@
-// background.js
 
-// Function to update the action icon based on the current tab's URL
 function updateIconBasedOnCurrentTab() {
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
     if (tabs.length === 0) {
@@ -36,27 +34,24 @@ function updateIconBasedOnCurrentTab() {
   });
 }
 
-// Update the icon when a tab is updated (navigates to a new URL)
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (changeInfo.status === "complete" || changeInfo.url) {
     updateIconBasedOnCurrentTab();
   }
 });
 
-// Update the icon when the active tab changes
 chrome.tabs.onActivated.addListener(function (activeInfo) {
   updateIconBasedOnCurrentTab();
 });
 
-// Update the icon when the window focus changes
 chrome.windows.onFocusChanged.addListener(function (windowId) {
-  // Ignore -1 (when all Chrome windows are minimized)
+  
   if (windowId !== chrome.windows.WINDOW_ID_NONE) {
     updateIconBasedOnCurrentTab();
   }
 });
 
-// Update the icon when the extension is first installed
+
 chrome.runtime.onInstalled.addListener(function () {
   updateIconBasedOnCurrentTab();
 });

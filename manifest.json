@@ -3,6 +3,7 @@
   "name": "YouTube ContinueOn",
   "description": "Generate a QR code for your current YouTube video to resume playback on another device seamlessly.",
   "version": "1.4",
+  "builder":"saksham saini",
   "permissions": ["activeTab", "notifications", "tabs", "windows"],
   "background": {
     "service_worker": "background.js"

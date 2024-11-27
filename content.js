@@ -1,14 +1,13 @@
-// content.js
 
 function injectQRCodeButtonIntoPlayer() {
-  // Prevent multiple button injections
+ 
   if (document.getElementById('qr-code-player-button')) return;
 
-  // Get the player controls element
+  
   const playerControls = document.querySelector('.ytp-right-controls');
 
   if (playerControls) {
-    // Create the QR code button
+    
     const button = document.createElement('button');
     button.id = 'qr-code-player-button';
     button.className = 'ytp-button';
@@ -30,19 +29,17 @@ function injectQRCodeButtonIntoPlayer() {
     `;
     button.addEventListener('click', generateAndDisplayQRCode);
 
-    // Insert the button into the player controls
+    
     playerControls.insertBefore(button, playerControls.firstChild);
   }
 }
 
-// Handle messages from the background script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'showQRCodeOverlay') {
     generateAndDisplayQRCode();
   }
 });
 
-// Generate and display the QR code overlay
 function generateAndDisplayQRCode() {
   let qrCodeContainer = document.getElementById('qr-code-container');
 
@@ -53,7 +50,7 @@ function generateAndDisplayQRCode() {
     return;
   }
 
-  // Get the current video URL and timestamp
+ 
   const videoElement = document.querySelector('video');
   const url = new URL(window.location.href);
   if (videoElement) {
@@ -128,14 +125,13 @@ function generateAndDisplayQRCode() {
 
   document.body.appendChild(qrCodeContainer);
 
-  // Generate the QR code
+
   new QRCode(qrCodeDiv, {
     text: url.toString(),
     width: 150,
     height: 150,
   });
 
-  // Trigger the fade-in transition
   void qrCodeContainer.offsetWidth;
   qrCodeContainer.classList.add('active');
 
@@ -151,7 +147,6 @@ function generateAndDisplayQRCode() {
   });
 }
 
-// Close the QR code overlay
 function closeQRCodeOverlay() {
   const qrCodeContainer = document.getElementById('qr-code-container');
   if (qrCodeContainer) {
@@ -165,7 +160,6 @@ function closeQRCodeOverlay() {
   }
 }
 
-// Get the video title from various possible DOM elements
 function getVideoTitle() {
   let videoTitleElement =
     document.querySelector('h1.title yt-formatted-string') ||
@@ -182,7 +176,6 @@ function getVideoTitle() {
   return videoTitle;
 }
 
-// Observe the player controls for changes and inject the QR code button
 const playerObserver = new MutationObserver(() => {
   injectQRCodeButtonIntoPlayer();
 });

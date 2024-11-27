@@ -1,4 +1,4 @@
-/* Style for the QR code button in the player controls */
+
 #qr-code-player-button {
   background: none;
   border: none;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  margin-right: 8px; /* Add some space to the right of the button */
+  margin-right: 8px; 
 }
 
 #qr-code-player-button svg {
@@ -20,7 +20,6 @@
   opacity: 1;
 }
 
-/* Style for the QR code overlay container */
 #qr-code-container {
   position: fixed;
   top: 0;
@@ -33,17 +32,15 @@
   z-index: 10000;
   opacity: 0;
   visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background */
+  background-color: rgba(0, 0, 0, 0.5); 
   transition: opacity 0.3s ease-in-out;
 }
 
-/* When the overlay is active, make it visible */
 #qr-code-container.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* Style for the content wrapper */
 #qr-code-content {
   background: transparent;
   border-radius: 8px;
@@ -60,14 +57,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.463); /* Semi-transparent */
+  background-color: rgba(0, 0, 0, 0.463); 
   color: #fff;
   text-shadow: 0 0 15px white;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  -webkit-backdrop-filter: blur(10px); 
 }
 
 #qr-code-header-text {
@@ -100,21 +97,21 @@
   outline: none;
 }
 
-/* Style for the main content area */
+
 #qr-code-main-content {
   display: flex;
 }
 
-/* Left section (thumbnail and title) */
+
 #qr-code-left {
   flex: 1 1 75%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(27, 27, 27, 0.569); /* Slightly different transparency */
+  background-color: rgba(27, 27, 27, 0.569); 
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  -webkit-backdrop-filter: blur(10px); 
 }
 
 #qr-code-thumbnail {
@@ -139,14 +136,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(50, 48, 48, 0.465); /* Slightly different transparency */
+  background-color: rgba(50, 48, 48, 0.465); 
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Style for the QR code itself */
 #qr-code {
-  background-color: rgb(255, 255, 255); /* Slightly opaque background */
+  background-color: rgb(255, 255, 255); 
   padding: 12px;
   border-radius: 15px;
   box-shadow: 0 0 30px rgb(255, 255, 255);
@@ -157,12 +154,12 @@
   align-items: center !important;
 }
 
-/* Adjust the position of other controls */
+
 .ytp-right-controls > :not(#qr-code-player-button) {
   margin-left: auto;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 600px) {
   #qr-code-main-content {
     flex-direction: column;
