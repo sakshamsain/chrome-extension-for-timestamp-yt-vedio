@@ -1,5 +1,4 @@
-# Chrome extension that enhances your YouTube viewing experience by generating a QR code of the current video, including the exact timestamp.
-# With a simple scan, you can continue watching the video on any device from where you left off.
+# Chrome extension that enhances your YouTube viewing experience by generating a QR code of the current video, including the exact timestamp. With a simple scan, you can continue watching the video on any device from where you left off.
 
 ## Installation
 Clone the Repository
