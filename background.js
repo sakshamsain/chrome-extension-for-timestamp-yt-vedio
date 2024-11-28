@@ -2,7 +2,7 @@
 function updateIconBasedOnCurrentTab() {
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
     if (tabs.length === 0) {
-      // No active tabs, set icon to grey
+     
       chrome.action.setIcon({
         path: {
           "48": "icons/icon_grey-48.png",
@@ -13,7 +13,7 @@ function updateIconBasedOnCurrentTab() {
     }
     const tab = tabs[0];
     if (tab.url && tab.url.includes("youtube.com/watch")) {
-      // Set the colorful icon when on a YouTube video page
+    
       chrome.action.setIcon({
         path: {
           "48": "icons/icon-48.png",
@@ -22,7 +22,7 @@ function updateIconBasedOnCurrentTab() {
         tabId: tab.id,
       });
     } else {
-      // Set the grey icon
+     
       chrome.action.setIcon({
         path: {
           "48": "icons/icon_grey-48.png",
@@ -56,12 +56,12 @@ chrome.runtime.onInstalled.addListener(function () {
   updateIconBasedOnCurrentTab();
 });
 
-// Update the icon when the browser starts up
+
 chrome.runtime.onStartup.addListener(function () {
   updateIconBasedOnCurrentTab();
 });
 
-// Handle the action button click
+
 chrome.action.onClicked.addListener((tab) => {
   if (tab.url && tab.url.includes("youtube.com/watch")) {
     console.log("Sending showQRCodeOverlay message.");
